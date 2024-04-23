@@ -1,0 +1,21 @@
+Welcome page
+login form
+registartion form link
+info page
+
+registartaion page
+self register form
+welcome page link
+
+dashboard page
+primary bank and bacnk balance page
+wallet balance and add money to wallet
+link to bank account lists
+statement form
+send money link
+logout
+
+
+bankaccounts list page
+request stmt page
+send money page
