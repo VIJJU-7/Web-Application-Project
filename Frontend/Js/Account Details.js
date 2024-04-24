@@ -14,4 +14,3 @@ window.addEventListener("DOMContentLoaded", function() {
 
   signUpButton.addEventListener("click", checkInputFields);
 });
-
