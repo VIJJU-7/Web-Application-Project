@@ -214,6 +214,11 @@ body {
   cursor: pointer;
 }
 
+p {
+  color: gray;
+  font-weight: 900;
+}
+
 .centered-content {
   display: flex;
   justify-content: center;
