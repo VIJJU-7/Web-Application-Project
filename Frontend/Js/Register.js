@@ -11,6 +11,23 @@ window.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
+  let backButton = document.querySelector("#back-button");
+
+let redirectToPreviousPage = (e) => {
+    e.preventDefault();
+    window.location.href = "WelcomePage.html";
+}
+
+backButton.addEventListener("click", redirectToPreviousPage);
+
 
   signUpButton.addEventListener("click", checkInputFields);
+  signUpButton.addEventListener("click", checkInputFields);
+  backButton.addEventListener("click", function() {
+    window.location.href = "WelcomePage.html";
+  });
 });
+
+
+
+
