@@ -1,5 +1,3 @@
-
-
 let switchCtn = document.querySelector("#switch-cnt");
 let switchC1 = document.querySelector("#switch-c1");
 let switchC2 = document.querySelector("#switch-c2");
@@ -10,6 +8,29 @@ let bContainer = document.querySelector("#b-container");
 let allButtons = document.querySelectorAll(".submit");
 
 let getButtons = (e) => e.preventDefault()
+
+let signInButton = document.querySelector("#b-form .submit");
+let redirectToNewPage = (e) => 
+{
+    e.preventDefault();
+    window.location.href = "";
+}
+signInButton.addEventListener("click", redirectToNewPage);
+
+let signUpButton = document.querySelector("#a-form .submit");
+let redirect = (e) => {
+    e.preventDefault();
+    let inputs = document.querySelectorAll('#a-form .form__input');
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === '') {
+            alert('Input fields are empty');
+            return;
+        }
+    }
+    window.location.href = "Register.html";
+}
+
+signUpButton.addEventListener("click", redirect);
 
 let changeForm = (e) => {
 
@@ -28,6 +49,18 @@ let changeForm = (e) => {
     bContainer.classList.toggle("is-txl");
     bContainer.classList.toggle("is-z200");
 }
+let checkInputFields = (e) => {
+        let inputs = document.querySelectorAll('.form__input');
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.trim() === '') {
+                e.preventDefault();
+                alert('Some Input fields cannot be empty');
+                return;
+            }
+        }
+    }
+    
+    signInButton.addEventListener("click", checkInputFields);
 
 let mainF = (e) => {
     for (var i = 0; i < allButtons.length; i++)
@@ -37,3 +70,24 @@ let mainF = (e) => {
 }
 
 window.addEventListener("load", mainF);
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    let signUpButton = document.querySelector("#a-form .submit");
+  
+    let checkInputFields = (e) => {
+      let inputs = document.querySelectorAll('#a-form .form__input');
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === '') {
+          e.preventDefault();
+          alert('Some Input fields cannot be empty');
+          return;
+        }
+      }
+    }
+  
+    signUpButton.addEventListener("click", checkInputFields);
+  });
+  
+
+
