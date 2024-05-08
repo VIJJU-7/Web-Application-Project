@@ -3,11 +3,14 @@ create database vijay;
 use vijay;
 
 create table Register_Details(
-Register_Name    varchar(50),
-Phone_Num        varchar(15),
-Email            varchar(25),
-DOB              date,
-Password         varchar(10)
+User_ID          int primary key auto_increment not null,
+Register_Name    varchar(50) not null,
+Email            varchar(25) not null,
+Phone_Num        varchar(15) unique not null,
+Address          varchar(200) not null,
+DOB              date not null,
+Currwalletbal    double not null default '0.0',
+Password         varchar(10) not null
 );
 -- drop table Register_Details;
 
