@@ -4,7 +4,7 @@
 <html>
 <head>
  <meta charset="UTF-8">
-    <title>Payments App</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel='stylesheet'>
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
@@ -75,11 +75,11 @@
      </li>
      <li>
 
-       <a href="#">
+       <a href="AccountDetails.jsp">
         <i class='bx bx-money'></i>
-         <span class="links_name">Add Money</span>
+         <span class="links_name">Send Money</span>
        </a>
-       <span class="tooltip">Add Money</span>
+       <span class="tooltip">Send Money</span>
      </li>
     <li>
        <a href="#">
@@ -131,6 +131,6 @@
   </section>
 </form>
 
-<script src="Dashbaord.js"></script>
+<script src="Dashboard.js"></script>
 </body>
 </html>
