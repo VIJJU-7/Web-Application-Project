@@ -64,7 +64,6 @@ body {
   width: 600px;
   min-width: 100px;
   min-height: 600px;
-  height: 800px;
   padding: 25px;
   background-color:  rgba(236, 240, 243,0.8);
   box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
@@ -72,6 +71,23 @@ body {
   overflow: hidden;
 }
 
+.thnku-bg1 {
+    background: url('https://images.unsplash.com/photo-1459257831348-f0cdd359235f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed; 
+    background-size: cover;  
+    justify-content : center;
+    align-items : center;
+    min-height: 600px;
+}
+
+.thnku-overlay1 {
+    justify-content : center;
+    align-items : center;
+}
+
+.h5s{
+	font-size :20px;
+}
+        
 @media (max-width: 1200px) {
   .main {
     transform: scale(0.7);
