@@ -16,6 +16,41 @@ Password         varchar(10) not null
 
 select * from Register_Details;
 
+create table Bank_Account_Types(
+BaType                enum ("CURRENT", "LOAN", "SAVINGS", "SALARY"),
+BaTypeID              int not null,
+ACCT_Type_Code        varchar(3),
+ACCT_Type_Description varchar(25),
+primary key           (Bank_ACCT_Type_ID)
+);
+
+select * from Bank_Account_Types;
+
+desc Bank_Account_Types;
+
+-- drop table Account_Types;
+
+
+create table Bank_Acct_Details(
+User_ID           int not null,
+BaTypeID          int not null,
+BaNumber          long not null,
+BaName            varchar(20),
+IFSC_CODE         varchar(10),
+BaPin             varchar(10),
+CurrentBankBal    double,
+primary key      (BaNumber),
+foreign key      (BaTypeID)
+references        Bank_Account_Types (BaTypeID),
+foreign key      (User_ID)
+references        Register_Details (User_ID)
+);
+
+desc Bank_Acct_Details;
+
+-- drop table Bank_Acct_Details;
+
+
 Select Register_Name, Password from Register_Details;
 
 alter table Register_Details add Currwalletbal double not null default '0';
