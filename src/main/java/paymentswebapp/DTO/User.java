@@ -5,9 +5,23 @@ public class User {
 	String Name;
 	String Email;
 	String PhoneNum;
+	String Address;
 	String DateOfBirth;
 	String Password;
+	double CurrWallBal;
 	
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
+	}
+	public double getCurrWallBal() {
+		return CurrWallBal;
+	}
+	public void setCurrWallBal(double currWallBal) {
+		CurrWallBal = currWallBal;
+	}
 	public String getName() {
 		return Name;
 	}
