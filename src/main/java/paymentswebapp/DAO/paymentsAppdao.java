@@ -11,9 +11,9 @@ public void RegisterDetails(User u) {
 	
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","root");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","Vijay@7777");
 		Statement stmt = con.createStatement();
-		String query = "Insert into Register_Details (Register_Name, Phone_Num, Email, DOB, Password) values ('"+u.getName()+"','"+u.getPhoneNum()+"','"+u.getEmail()+"','"+u.getDateOfBirth()+"','"+u.getPassword()+"')";
+		String query = "Insert into Register_Details (Register_Name, Phone_Num, Email, Address, DOB, Password) values ('"+u.getName()+"','"+u.getPhoneNum()+"','"+u.getEmail()+"','"+u.getAddress()+"','"+u.getDateOfBirth()+"','"+u.getPassword()+"')";
 		stmt.executeUpdate(query);
 		stmt.close();
 		con.close();
@@ -26,7 +26,7 @@ public void RegisterDetails(User u) {
 	public boolean ValidateLogin(String name, String password) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","Vijay@7777");
 			Statement stmt = con.createStatement();
 			String query = "Select Register_Name, Password from Register_Details"; 
 			ResultSet rs = stmt.executeQuery(query);
