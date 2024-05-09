@@ -37,6 +37,7 @@ public class WelcomeServlet extends HttpServlet {
 		}
 		else {
 			response.setContentType("text/html");
+			response.getWriter().write("<p style='color:red; font-size:18px; text-align:center; position:absolute; padding:170px; top:0; left : 0; width:100%;'> Login Failed Please Try Again !!!! <p>");
 			RequestDispatcher rd = request.getRequestDispatcher("/WelcomePage.jsp");
 			rd.include(request, response);
 		}
