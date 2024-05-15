@@ -43,4 +43,44 @@ public void RegisterDetails(User u) {
 	}
 	return false;
 }
-}
+
+
+
+//	public void addBankAccount(BankAccount b) {
+//	    try {
+//	        Class.forName("com.mysql.cj.jdbc.Driver");
+//	        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","Vijay@7777");
+//	        Statement stmt = con.createStatement();
+//	        String query = "INSERT INTO Bank_Acct_Details (User_ID, BaTypeID, BaName, BaNumber, IFSC_CODE, Phonenum, BaAccName, CurrentBankBal) VALUES ('"+b.getUserId()+"','"+b.getBaTypeID()+"','"+b.getBaName()+"','"+b.getBaNumber()+"','"+b.getIFSC_CODE()+"','"+b.getPhonenum()+"','"+b.getBaAccName()+"','"+b.getCurrBankBal()+"')";
+//	        stmt.executeUpdate(query);
+//	        stmt.close();
+//	        con.close();
+//	    } catch (Exception e){
+//	        e.printStackTrace();
+//	    }
+	
+	public void addBankAccount(BankAccount b) {
+	    try {
+	        Class.forName("com.mysql.cj.jdbc.Driver");
+	        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vijay","root","Vijay@7777");
+	        Statement stmt = con.createStatement();
+
+	       
+	        String checkQuery = "SELECT * FROM Bank_Account_Types WHERE BaTypeID = '" + b.getBaTypeID() + "'";
+	        ResultSet rs = stmt.executeQuery(checkQuery);
+
+	        if (!rs.next()) {
+	            System.out.println("Error: BaTypeID does not exist in bank_account_types.");
+	            return;
+	        }
+
+	        String query = "INSERT INTO Bank_Acct_Details (User_ID, BaTypeID, BaName, BaNumber, IFSC_CODE, Phonenum, BaAccName, CurrentBankBal) VALUES ('"+b.getUserId()+"','"+b.getBaTypeID()+"','"+b.getBaName()+"','"+b.getBaNumber()+"','"+b.getIFSC_CODE()+"','"+b.getPhonenum()+"','"+b.getBaAccName()+"','"+b.getCurrBankBal()+"')";
+	        stmt.executeUpdate(query);
+	        stmt.close();
+	        con.close();
+	    } catch (Exception e){
+	        e.printStackTrace();
+	    }
+	}
+
+	}
