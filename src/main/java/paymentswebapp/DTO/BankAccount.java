@@ -1,13 +1,38 @@
 package paymentswebapp;
 
 public class BankAccount {
-	String  BaName;
-	String  BaBranch;
-	String  IFSC_CODE;
-	long    BaNumber;
-	double  CurrBankBal;
-	int     BaTypeID;
-	int     BaPin;
+	private	String  BaName;
+	private String  BaBranch;
+	private String  IFSC_CODE;
+	private String  BaNumber;
+	private double  CurrBankBal;
+	private int     BaTypeID;
+	private int     BaPin;
+	private int 	UserId;
+	private long 	Phonenum;
+	private String	BaAccName;
+
+	
+	public String getBaAccName() {
+		return BaAccName;
+	}
+	public void setBaAccName(String baAccName) {
+		BaAccName = baAccName;
+	}
+	
+	public long getPhonenum() {
+		return Phonenum;
+	}
+	public void setPhonenum(long phonenum) {
+		Phonenum = phonenum;
+	}
+
+	public int getUserId() {
+		return UserId;
+	}
+	public void setUserId(int userId) {
+		UserId = userId;
+	}
 	public String getBaName() {
 		return BaName;
 	}
@@ -26,10 +51,10 @@ public class BankAccount {
 	public void setIFSC_CODE(String iFSC_CODE) {
 		IFSC_CODE = iFSC_CODE;
 	}
-	public long getBaNumber() {
+	public String getBaNumber() {
 		return BaNumber;
 	}
-	public void setBaNumber(long baNumber) {
+	public void setBaNumber(String baNumber) {
 		BaNumber = baNumber;
 	}
 	public double getCurrBankBal() {
