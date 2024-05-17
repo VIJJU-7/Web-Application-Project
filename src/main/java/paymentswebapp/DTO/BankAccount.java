@@ -1,78 +1,77 @@
 package paymentswebapp;
 
 public class BankAccount {
-	private	String  BaName;
-	private String  BaBranch;
-	private String  IFSC_CODE;
-	private String  BaNumber;
-	private double  CurrBankBal;
-	private int     BaTypeID;
-	private int     BaPin;
-	private int 	UserId;
-	private long 	Phonenum;
-	private String	BaAccName;
-
-	
-	public String getBaAccName() {
-		return BaAccName;
-	}
-	public void setBaAccName(String baAccName) {
-		BaAccName = baAccName;
-	}
-	
-	public long getPhonenum() {
-		return Phonenum;
-	}
-	public void setPhonenum(long phonenum) {
-		Phonenum = phonenum;
-	}
-
+	        int userId;
+	private int bankAcctId;
+	private String bankAcctNum;
+	private String bankAcctHolderName;
+	private String bankName;
+	private String bankIfscCode;
+	private String bankAcctPin;
+	private String bankAcctType;
+	private double bankAcctCurBalance;
+	private String phoneNumber;
 	public int getUserId() {
-		return UserId;
+		return userId;
 	}
 	public void setUserId(int userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
-	public String getBaName() {
-		return BaName;
+	public int getBankAcctId() {
+		return bankAcctId;
 	}
-	public void setBaName(String baName) {
-		BaName = baName;
+	public void setBankAcctId(int bankAcctId) {
+		this.bankAcctId = bankAcctId;
 	}
-	public String getBaBranch() {
-		return BaBranch;
+	public String getBankAcctNum() {
+		return bankAcctNum;
 	}
-	public void setBaBranch(String baBranch) {
-		BaBranch = baBranch;
+	public void setBankAcctNum(String bankAcctNum) {
+		this.bankAcctNum = bankAcctNum;
 	}
-	public String getIFSC_CODE() {
-		return IFSC_CODE;
+	public String getBankAcctHolderName() {
+		return bankAcctHolderName;
 	}
-	public void setIFSC_CODE(String iFSC_CODE) {
-		IFSC_CODE = iFSC_CODE;
+	public void setBankAcctHolderName(String bankAcctHolderName) {
+		this.bankAcctHolderName = bankAcctHolderName;
 	}
-	public String getBaNumber() {
-		return BaNumber;
+	public String getBankName() {
+		return bankName;
 	}
-	public void setBaNumber(String baNumber) {
-		BaNumber = baNumber;
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
 	}
-	public double getCurrBankBal() {
-		return CurrBankBal;
+	public String getBankIfscCode() {
+		return bankIfscCode;
 	}
-	public void setCurrBankBal(double currBankBal) {
-		CurrBankBal = currBankBal;
+	public void setBankIfscCode(String bankIfscCode) {
+		this.bankIfscCode = bankIfscCode;
 	}
-	public int getBaTypeID() {
-		return BaTypeID;
+	public String getBankAcctPin() {
+		return bankAcctPin;
 	}
-	public void setBaTypeID(int baTypeID) {
-		BaTypeID = baTypeID;
+	public void setBankAcctPin(String bankAcctPin) {
+		this.bankAcctPin = bankAcctPin;
 	}
-	public int getBaPin() {
-		return BaPin;
+	public String getBankAcctType() {
+		return bankAcctType;
 	}
-	public void setBaPin(int baPin) {
-		BaPin = baPin;
+	public void setBankAcctType(String bankAcctType) {
+		this.bankAcctType = bankAcctType;
 	}
+	public double getBankAcctCurBalance() {
+		return bankAcctCurBalance;
+	}
+	public void setBankAcctCurBalance(double bankAcctCurBalance) {
+		this.bankAcctCurBalance = bankAcctCurBalance;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
+
+	
 }
