@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="paymentswebapp.User" %>
+<%@ page import="paymentswebapp.BankAccount" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +49,7 @@
      </li>
      <li>
 
-       <a href="#">
+       <a href="AddBankAccount.jsp">
         <!-- <i class='bx bxs-user-account' ></i> -->
         <!-- <i class='bx bx-bitcoin'></i> -->
         <!-- <i class='bx bx-coin' ></i> -->
@@ -75,7 +78,7 @@
      </li>
      <li>
 
-       <a href="AccountDetails.jsp">
+       <a href="SendMoney.jsp">
         <i class='bx bx-money'></i>
          <span class="links_name">Send Money</span>
        </a>
@@ -113,8 +116,8 @@
          <div class="profile-details">
            <img src="Profile.jpg" alt="profileImg">
            <div class="name_job">
-             <div class="name">Vijay Kumar</div>
-             <div class="job">Full Stack Developer</div>
+             <div class="name">Hello User</div>
+             <div class="job">Enjoying Your Work</div>
            </div>
          </div>
          <a href="#">
@@ -127,10 +130,27 @@
   <section class="home-section">
     <center>
       <div class="text">Welcome Mr. <%= request.getAttribute("Name") %></div>
+			</div>
+	
+	<div class="">
+			<% List<BankAccount> baList = (List<BankAccount>)request.getAttribute("baList");
+				if(baList !=null){
+                	for(int i=0;i< baList.size();i++){
+						BankAccount ba = baList.get(i);%>
+						<hr>
+						<h2> Bank Name       :  <%=ba.getBankName() %>          </h2>
+						<h2> Bank Account No :  <%=ba.getBankAcctNum()%>        </h2>
+						<h2> IFSC Code       :  <%=ba.getBankIfscCode()%>       </h2>
+						<h2> Account Type    :  <%=ba.getBankAcctType()%>       </h2>
+						<h2> Balance         :  <%=ba.getBankAcctCurBalance()%> </h2>
+					<%}%>
+					<%} %>
+								
+		</div>
+		
     </center>
   </section>
 </form>
-
 <script src="Dashboard.js"></script>
 </body>
 </html>
