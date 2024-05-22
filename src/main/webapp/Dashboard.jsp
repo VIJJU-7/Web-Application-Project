@@ -9,6 +9,7 @@
  <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel='stylesheet'>
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +57,7 @@
         <i class='bx bxs-coin' ></i>
          <span class="links_name">Bank Account</span>
        </a>
-       <span class="tooltip">Bank Account</span>
+       <span class="tooltip">Add Bank Account</span>
      </li>
      <li>
 
@@ -125,32 +126,40 @@
     </ul>
   </div>
   </form>
-
   <form action="" method="">
   <section class="home-section">
     <center>
+    <img src = "https://cdn.dribbble.com/users/9421/screenshots/7370903/media/7af22331c7f9b3d2f5d990df5e6c9a56.gif" style ="width :400px; height :300px;">
+    <!-- img src = "https://cdn.dribbble.com/users/219519/screenshots/3754798/piggy-bank-run.gif" -->
+    <!-- img src ="https://cdn.dribbble.com/users/911625/screenshots/4661928/pig.gif"-->
       <div class="text">Welcome Mr. <%= request.getAttribute("Name") %></div>
 			</div>
-	
-	<div class="">
-			<% List<BankAccount> baList = (List<BankAccount>)request.getAttribute("baList");
-				if(baList !=null){
-                	for(int i=0;i< baList.size();i++){
+			
+<div class="container">
+  <ul class="cards">
+    <div class="card">
+        <div class="card-content">
+         <% List<BankAccount> baList = (List<BankAccount>)request.getAttribute("baList");
+                	for(int i=0; i< baList.size(); i++){
 						BankAccount ba = baList.get(i);%>
-						<hr>
-						<h2> Bank Name       :  <%=ba.getBankName() %>          </h2>
-						<h2> Bank Account No :  <%=ba.getBankAcctNum()%>        </h2>
-						<h2> IFSC Code       :  <%=ba.getBankIfscCode()%>       </h2>
-						<h2> Account Type    :  <%=ba.getBankAcctType()%>       </h2>
-						<h2> Balance         :  <%=ba.getBankAcctCurBalance()%> </h2>
-					<%}%>
-					<%} %>
-								
-		</div>
-		
+						
+						<h4 class="name"> Bank Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; <%=ba.getBankName() %> </h4>
+						<h4> Bank Acct No&nbsp;&nbsp; :  &nbsp;<%=ba.getBankAcctNum()%>        </h4>
+						<h4> IFSC Code   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp; <%=ba.getBankIfscCode()%> </h4>
+						<h4> Account Type&nbsp;  :&nbsp; <%=ba.getBankAcctType()%>       </h4>
+						<h4> Balance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp;  <%=ba.getBankAcctCurBalance()%> </h4>					
+			<%}%>		
+      </div>
+      
+      <div class="card-link-wrapper">
+        <a href="#" class="card-link">+</a>&nbsp;
+        <a href="#" class="card-link">Edit</a>
+      </div>
+</div>
     </center>
   </section>
 </form>
 <script src="Dashboard.js"></script>
+<script src ="index.js"></script>
 </body>
 </html>
