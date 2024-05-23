@@ -8,6 +8,7 @@
   font-family: "Poppins" , sans-serif;
   color: white;/*black*/
   text-decoration:none;
+}
 
 .sidebar{
   position: fixed;
@@ -15,7 +16,7 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: #4B70E2;
+  background: border-box; /*#4B70E2;8*/
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -249,16 +250,16 @@
 }
 
 .topnav h3 {
-	color:black;
+	color: white; /*black*/
 } 
 
 .topnav a {
     float: left;
-    color: black; /*#f2f2f2*/
+    color: white; /*black*/ /*#f2f2f2*/
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     font-weight:bold;
 }
 
@@ -279,7 +280,7 @@
 
 .home-section .text{
   display: inline-block;
-  color: darkslategray; /*midnightblue*/
+  color: white; /*black*/ /*darkslategray*/ /*midnightblue*/
   font-size: 50px;
   font-family: Allerta Stencil;
   font-weight: 580;
@@ -330,5 +331,4 @@ body.dark .text, body.dark .support a {color: #ecf0f3;}
 
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
-}
 }
