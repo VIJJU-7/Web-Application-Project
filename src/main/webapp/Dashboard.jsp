@@ -128,7 +128,15 @@
   </form>
   <form action="" method="">
   <section class="home-section">
+ <div class="topnav">
+    <h3>DASHBOARD</h3>
+    <div class="topnav-right">
+        <a href="#search">Contact</a>
+        <a href="#about">About Us</a>
+    </div>
+</div>
     <center>
+    <%User sessionUser = (User)session.getAttribute("user");%>
     <img src = "https://cdn.dribbble.com/users/9421/screenshots/7370903/media/7af22331c7f9b3d2f5d990df5e6c9a56.gif" style ="width :400px; height :300px;">
     <!-- img src = "https://cdn.dribbble.com/users/219519/screenshots/3754798/piggy-bank-run.gif" -->
     <!-- img src ="https://cdn.dribbble.com/users/911625/screenshots/4661928/pig.gif"-->
@@ -140,15 +148,16 @@
     <div class="card">
         <div class="card-content">
          <% List<BankAccount> baList = (List<BankAccount>)request.getAttribute("baList");
-                	for(int i=0; i< baList.size(); i++){
+         if(baList !=null){
+        	 for(int i=0; i< baList.size(); i++){
 						BankAccount ba = baList.get(i);%>
-						
 						<h4 class="name"> Bank Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; <%=ba.getBankName() %> </h4>
 						<h4> Bank Acct No&nbsp;&nbsp; :  &nbsp;<%=ba.getBankAcctNum()%>        </h4>
 						<h4> IFSC Code   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp; <%=ba.getBankIfscCode()%> </h4>
 						<h4> Account Type&nbsp;  :&nbsp; <%=ba.getBankAcctType()%>       </h4>
 						<h4> Balance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp;  <%=ba.getBankAcctCurBalance()%> </h4>					
-			<%}%>		
+			<%}%>	
+			<%} %>	
       </div>
       
       <div class="card-link-wrapper">
